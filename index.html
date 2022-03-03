@@ -12,12 +12,21 @@
   <body>
     <main>
       <!-- part of palindrome -->
-      <div class="palindrome text-center mt-5">
-        <h1>La tua parola è palindroma?</h1>
+      <div class="palindrome text-center my-5">
+        <h1 class="text-danger">La tua parola è palindroma?</h1>
         <h3>Verificalo <i class="fas fa-arrow-down"></i></h3>
         <input type="text">
         <button class="btn btn-primary">Invia</button>
-        <h2 class="text-primary mt-2"></h2>
+        <h2 class="text-primary mt-2 invisible">La tua parola <span></span></h2>
+      </div>
+      <!-- part of even and odd -->
+      <div class="even-odd text-center my-5">
+        <h1 class="text-danger">Inserisci un numero da 1 a 5 e scegli pari o dispari</h1>
+        <input type="text" class="d-block mx-auto my-4">
+        <button id="even" class="btn btn-danger px-4 me-4">Pari</button>
+        <button id="odd" class="btn btn-success">Dispari</button>
+        <h2>Il numero del bot &egrave;: <span></span></h2>
+        <h3></h3>
       </div>
     </main>
     <script type="text/javascript" src="js/script.js"></script>
