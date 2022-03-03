@@ -1,26 +1,30 @@
 let userWord="";
 let words=[];
+// add fuction at the button
 document.querySelector('.palindrome .btn').addEventListener('click', function () {
-  userWord= document.querySelector('input').value;
-  console.log(userWord);
+  userWord= document.querySelector('input').value.toLocaleLowerCase();
+  // I subdivide the letters of the string
   words=userWord.split('');
-  console.log(words)
-
-words.reverse();
-let reverseWord="";
-for (let i = 0; i < userWord.length; i++) {
-  reverseWord+=words[i];
-}
-console.log(reverseWord);
-palindrome(userWord , reverseWord);
+  // I reverse them
+  words.reverse();
+  let reverseWord="";
+  // I create a loop to join the array and make it become a string
+  for (let i = 0; i < userWord.length; i++) {
+    reverseWord+=words[i];
+  }
+  if (palindrome(userWord , reverseWord)) {
+    document.querySelector('.palindrome h2').innerHTML=`La tua parola &egrave; palindroma`
+  } 
+  else{
+    document.querySelector('.palindrome h2').innerHTML=`La tua parola non &egrave; palindroma`
+  }
 })
 
 
 function palindrome(tempWord , tempReversWord)
 {
   if (tempWord == tempReversWord) {
-    console.log('sono palindrome');
+    return true;
   }
-  else 
-  console.log('non sono palindrome');
+  return false;
 }
